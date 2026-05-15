@@ -1,0 +1,49 @@
+# Credenciales locales
+wp-config-local.php
+
+# Uploads
+/wp-content/uploads/
+
+# Backups de plugins
+/wp-content/ai1wm-backups/
+/wp-content/updraft/
+
+# Miniaturas generadas por servidor
+/.tmb/
+/.private/
+
+# Caché y archivos generados por plugins
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/backup-db/
+/wp-content/advanced-cache.php
+/wp-content/wp-cache-config.php
+/wp-content/object-cache.php
+/wp-content/debug.log
+
+# Node.js
+node_modules/
+/wp-content/themes/*/dist/
+/wp-content/themes/*/build/
+
+# DDEV
+.ddev/.downloads/
+.ddev/db_snapshots/
+.ddev/sequelpro.spf
+.ddev/.global_commands
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Dumps de BD
+*.sql
+*.sql.gz
+*.sql.bz2
+
+# Entorno
+.env
+.env.local
