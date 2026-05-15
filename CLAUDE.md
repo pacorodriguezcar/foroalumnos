@@ -283,6 +283,7 @@ git branch -d feature/nombre
 
 ```bash
 # Solo archivos del tema — NUNCA la BD completa hacia producción
+# NUNCA sincronizar wp-config.php al servidor (Hostinger tiene su propio wp-config.php con credenciales)
 rsync -avz --progress \
     --exclude="node_modules/" --exclude=".git/" --exclude="*.map" \
     -e "ssh -p 65002" \
