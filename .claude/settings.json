@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /tmp/figma-home.png \"https://www.figma.com/api/mcp/asset/8c8946bc-4a0c-41b2-a559-3846e557dd35\")",
+      "Read(//tmp/**)",
+      "Bash(ddev describe *)",
+      "Bash(ddev start *)",
+      "Bash(git -C /home/paco/proyectos/foroalumnos status)",
+      "Bash(git -C /home/paco/proyectos/foroalumnos log --oneline -5)",
+      "Bash(git -C /home/paco/proyectos/foroalumnos diff .gitignore)"
+    ]
+  }
+}

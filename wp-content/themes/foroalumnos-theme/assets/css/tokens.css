@@ -1,0 +1,262 @@
+/*
+ * Design Tokens — ForoAlumnos
+ * Fuente: Figma (Stitch / html.to.design, 15/05/2026)
+ * Pantallas analizadas: Portal de Inicio · Índice del Foro · Categoría Bachillerato
+ * Colores extraídos directamente del código generado por Figma MCP
+ */
+
+:root {
+
+  /* ─── PALETA EXACTA DE FIGMA ─────────────────────────────────── */
+
+  /* Blues / Azules primarios */
+  --color-science-blue:  #004ac6;   /* Principal — texto azul, links, descripciones */
+  --color-orient:        #005a82;   /* Barras de acento de categoría */
+  --color-hawkes-blue:   #d0e1fb;   /* Fondo de iconos / superficie tintada */
+  --color-hawkes-blue-2: #c0d8f8;   /* Variante hover */
+
+  /* Neutros azul-pizarra (Figma usa neutros con matiz azul, no grises puros) */
+  --color-shark:        #191c1e;   /* Texto primario / titulares */
+  --color-mako:         #434655;   /* Texto on-surface-variant */
+  --color-oxford-blue:  #38485d;   /* Texto de etiquetas/tags */
+  --color-blue-bayoux:  #54647a;   /* Texto secundario / on-secondary-container */
+  --color-storm-gray:   #737686;   /* Meta text, timestamps en cursiva */
+
+  /* Superficies */
+  --color-white:        #ffffff;
+  --color-porcelain:    #eceef0;   /* bg-surface-container (cabeceras de sección) */
+  --color-iron:         #e6e8ea;   /* Fondo de tags/pills */
+  --color-mystic:       #e0e3e5;   /* Fondo de avatares sin imagen */
+  --color-ghost:        #c3c6d7;   /* Bordes de tarjetas y secciones */
+  --color-athens-gray:  #f5f6f8;   /* bg-surface-container-low (inputs, fondo suave) */
+
+  /* Categoría ESO — azul */
+  --color-eso-50:  #eff6ff;
+  --color-eso-100: var(--color-hawkes-blue);
+  --color-eso-700: var(--color-science-blue);
+
+  /* Categoría FP — esmeralda */
+  --color-fp-50:  #ecfdf5;
+  --color-fp-100: #d1fae5;
+  --color-fp-500: #10b981;
+  --color-fp-700: #047857;
+
+  /* Categoría Bachillerato — ámbar/naranja */
+  --color-bach-50:  #fffbeb;
+  --color-bach-100: #fde68a;
+  --color-bach-500: #f59e0b;
+  --color-bach-700: #b45309;
+
+  /* Estados / feedback */
+  --color-success: #059669;
+  --color-warning: #f59e0b;
+  --color-error:   #dc2626;
+  --color-info:    var(--color-science-blue);
+
+  /* Online indicator */
+  --color-online:  #22c55e;
+
+
+  /* ─── COLORES SEMÁNTICOS ─────────────────────────────────────── */
+
+  --color-primary:          var(--color-science-blue);
+  --color-primary-hover:    #003da8;
+  --color-primary-active:   #002f8a;
+  --color-primary-light:    var(--color-hawkes-blue);
+  --color-primary-border:   var(--color-ghost);
+
+  /* Textos */
+  --color-text-primary:           var(--color-shark);
+  --color-text-secondary:         var(--color-blue-bayoux);
+  --color-text-muted:             var(--color-storm-gray);
+  --color-text-on-surface:        var(--color-mako);
+  --color-text-on-surface-variant: var(--color-mako);
+  --color-text-on-secondary-container: var(--color-blue-bayoux);
+  --color-text-link:              var(--color-science-blue);
+  --color-text-link-hover:        var(--color-primary-hover);
+  --color-text-inverse:           var(--color-white);
+  --color-text-tag:               var(--color-oxford-blue);
+
+  /* Superficies semánticas */
+  --color-bg-page:                var(--color-white);
+  --color-bg-card:                var(--color-white);
+  --color-bg-nav:                 var(--color-white);
+  --color-bg-surface-container:   var(--color-porcelain);      /* cabeceras de sección */
+  --color-bg-surface-low:         var(--color-athens-gray);    /* inputs, zonas suaves */
+  --color-bg-tag:                 var(--color-iron);
+  --color-bg-icon:                var(--color-hawkes-blue);
+  --color-bg-avatar:              var(--color-mystic);
+  --color-bg-footer:              var(--color-shark);
+
+  /* Bordes */
+  --color-border:          var(--color-ghost);
+  --color-border-focus:    var(--color-science-blue);
+  --color-border-divider:  var(--color-ghost);
+
+  /* Colores de acento por categoría */
+  --color-accent-eso:          var(--color-orient);          /* barra lateral izquierda */
+  --color-accent-fp:           var(--color-fp-700);
+  --color-accent-bachillerato: var(--color-bach-700);
+
+  /* Badges/pills de categoría */
+  --color-badge-eso-bg:   var(--color-eso-50);
+  --color-badge-eso-text: var(--color-science-blue);
+  --color-badge-fp-bg:    var(--color-fp-50);
+  --color-badge-fp-text:  var(--color-fp-700);
+  --color-badge-bach-bg:  var(--color-bach-50);
+  --color-badge-bach-text: var(--color-bach-700);
+
+  /* Roles de usuario */
+  --color-role-moderator: var(--color-science-blue);
+  --color-role-mentor:    var(--color-orient);
+  --color-role-expert:    var(--color-fp-700);
+  --color-role-member:    var(--color-blue-bayoux);
+
+
+  /* ─── TIPOGRAFÍA ─────────────────────────────────────────────── */
+
+  /* Familias exactas de Figma */
+  --font-heading: 'Manrope', system-ui, sans-serif;   /* font-family/Font 2 */
+  --font-body:    'Inter', system-ui, sans-serif;      /* font-family/Font 1 */
+  --font-mono:    'JetBrains Mono', Consolas, monospace;
+
+  /* Tamaños (de las variables de Figma: font-size/*, line-height/*) */
+  --font-size-12: 0.75rem;    /* 12px — micro, timestamps */
+  --font-size-14: 0.875rem;   /* 14px — body-sm, tags, descripciones */
+  --font-size-16: 1rem;       /* 16px — body-md, labels */
+  --font-size-18: 1.125rem;   /* 18px — body-lg */
+  --font-size-20: 1.25rem;    /* 20px — headline-sm (h3) */
+  --font-size-24: 1.5rem;     /* 24px */
+  --font-size-28: 1.75rem;    /* 28px — brand/logo */
+  --font-size-32: 2rem;       /* 32px — headline-md (h2) */
+  --font-size-40: 2.5rem;     /* 40px — headline-lg (h1 en Index) */
+  --font-size-48: 3rem;       /* 48px — headline-xl (h1 hero) */
+
+  /* Interlineados exactos de Figma (line-height/*) */
+  --line-height-16: 1rem;     /* 16px */
+  --line-height-20: 1.25rem;  /* 20px */
+  --line-height-24: 1.5rem;   /* 24px */
+  --line-height-28: 1.75rem;  /* 28px */
+  --line-height-32: 2rem;     /* 32px */
+  --line-height-40: 2.5rem;   /* 40px */
+  --line-height-48: 3rem;     /* 48px */
+
+  /* Pesos */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* Tracking */
+  --letter-spacing-07: 0.7px;  /* para estadísticas / números */
+  --letter-spacing-wide: 0.05em; /* para labels en mayúscula */
+
+  /* ── Escala tipográfica semántica ── */
+
+  /* Titulares — Manrope SemiBold */
+  --text-headline-xl:   var(--font-size-48) / var(--line-height-48) var(--font-heading);
+  --text-headline-lg:   var(--font-size-40) / var(--line-height-40) var(--font-heading);
+  --text-headline-md:   var(--font-size-32) / var(--line-height-32) var(--font-heading);
+  --text-headline-sm:   var(--font-size-20) / var(--line-height-28) var(--font-heading);
+
+  /* Cuerpo — Inter */
+  --text-body-lg:   var(--font-size-18) / var(--line-height-28) var(--font-body);
+  --text-body-md:   var(--font-size-16) / var(--line-height-24) var(--font-body);
+  --text-body-sm:   var(--font-size-14) / var(--line-height-20) var(--font-body);
+
+  /* Etiquetas — Inter */
+  --text-label-md:  var(--font-size-16) / var(--line-height-24) var(--font-body);
+  --text-label-sm:  var(--font-size-12) / var(--line-height-16) var(--font-body);
+
+
+  /* ─── ESPACIADO ──────────────────────────────────────────────── */
+  /* Basado en item-spacing/* de Figma */
+
+  --space-xxs: 0.25rem;    /*  4px — item-spacing/xxs */
+  --space-xs:  0.5rem;     /*  8px — item-spacing/xs  */
+  --space-sm:  0.75rem;    /* 12px — item-spacing/sm (gap entre icono y texto) */
+  --space-md:  2rem;       /* 32px — item-spacing/m   */
+  --space-lg:  4rem;       /* 64px — entre secciones principales */
+
+  /* Padding de componentes (de Figma) */
+  --padding-card:    33px;   /* padding interno de tarjetas de categoría */
+  --padding-section: 32px;   /* padding interno de secciones de categoría */
+  --padding-sidebar: 33px;   /* padding de tarjetas de sidebar */
+
+  /* Escala genérica */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+
+
+  /* ─── LAYOUT ─────────────────────────────────────────────────── */
+
+  --layout-container-max:      1200px;
+  --layout-container-padding:  1.5rem;   /* 24px */
+
+  /* Grid (de Figma: columnas en gap 16px) */
+  --layout-col-gap:    1rem;   /* 16px entre columnas del grid */
+
+  /* Contenido + sidebar */
+  --layout-content-width: 858px;   /* 9 de 12 columnas */
+  --layout-sidebar-width: 270px;   /* 3 de 12 columnas */
+  --layout-col-separator: 24px;    /* gap entre content y sidebar */
+
+  /* Tarjetas de categoría: 3 columnas */
+  --layout-cat-card-gap: 1.5rem;   /* 24px */
+
+  /* Filas de subcategoría (Component 4) */
+  --layout-subcat-row-gap: 16px;  /* gap entre filas */
+
+  /* Chrome */
+  --layout-navbar-height: 65px;
+  --layout-footer-height: 141px;
+
+
+  /* ─── BORDES Y RADIOS ────────────────────────────────────────── */
+
+  --radius-sm:   0.25rem;    /*  4px */
+  --radius-md:   0.5rem;     /*  8px — botones, inputs */
+  --radius-lg:   0.75rem;    /* 12px — tarjetas (de Figma: rounded-[12px]) */
+  --radius-full: 9999px;     /* píldoras — tags, avatares, barras de acento */
+
+  /* Barra de acento lateral (en tarjetas de categoría) */
+  --accent-bar-width: 4px;
+
+
+  /* ─── SOMBRAS ────────────────────────────────────────────────── */
+
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  --shadow-card-hover: 0 4px 12px 0 rgb(0 74 198 / 0.08), 0 2px 4px -1px rgb(0 0 0 / 0.04);
+  --shadow-nav:  0 1px 0 0 var(--color-border);
+
+
+  /* ─── TAMAÑOS DE AVATAR ──────────────────────────────────────── */
+
+  --avatar-sm: 32px;   /* sidebar lista de miembros */
+  --avatar-md: 40px;   /* topic cards, top contributors */
+  --avatar-lg: 48px;   /* perfil */
+
+
+  /* ─── TRANSICIONES ───────────────────────────────────────────── */
+
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+
+  /* ─── Z-INDEX ────────────────────────────────────────────────── */
+
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-modal:    400;
+}

@@ -47,3 +47,6 @@ node_modules/
 # Entorno
 .env
 .env.local
+
+# Claude Code (configuración local con tokens)
+.claude/settings.local.json
