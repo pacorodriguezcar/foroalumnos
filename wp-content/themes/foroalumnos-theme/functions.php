@@ -3,15 +3,33 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'FOROALUMNOS_VERSION', '1.0.0' );
 
+// Preconnect a Google Fonts para carga anticipada
+add_action( 'wp_head', 'foroalumnos_preconnect_fonts', 1 );
+function foroalumnos_preconnect_fonts(): void {
+	echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+}
+
 add_action( 'wp_enqueue_scripts', 'foroalumnos_enqueue_assets' );
 function foroalumnos_enqueue_assets() {
+	// Google Fonts — Manrope (titulares) + Inter (cuerpo)
+	wp_enqueue_style(
+		'foroalumnos-fonts',
+		'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap',
+		[],
+		null
+	);
+
 	// Estilos del tema padre (Astra)
 	wp_enqueue_style(
 		'astra-theme-css',
 		get_template_directory_uri() . '/style.css',
-		[],
+		[ 'foroalumnos-fonts' ],
 		wp_get_theme( 'astra' )->get( 'Version' )
 	);
+
+	// Sobrescribir variables de Astra con los tokens de Figma
+	wp_add_inline_style( 'astra-theme-css', foroalumnos_astra_overrides() );
 
 	// Tokens de diseño
 	wp_enqueue_style(
@@ -28,6 +46,57 @@ function foroalumnos_enqueue_assets() {
 		[ 'foroalumnos-tokens' ],
 		FOROALUMNOS_VERSION
 	);
+}
+
+/**
+ * CSS inline que sobreescribe los valores por defecto de Astra
+ * con la paleta y tipografía exactas del diseño en Figma.
+ */
+function foroalumnos_astra_overrides(): string {
+	return '
+:root {
+  /* Paleta global de Astra → tokens Figma */
+  --ast-global-color-0: #004ac6;
+  --ast-global-color-1: #003da8;
+  --ast-global-color-2: #191c1e;
+  --ast-global-color-3: #54647a;
+  --ast-global-color-4: #ffffff;
+  --ast-global-color-5: #eceef0;
+  --ast-global-color-6: #191c1e;
+  --ast-global-color-7: #c3c6d7;
+  --ast-global-color-8: #191c1e;
+
+  /* Ancho de contenedor → 1200 px */
+  --ast-container-width:       1200px;
+  --ast-normal-container-width: 1200px;
+  --ast-content-width-size:    1200px;
+  --ast-narrow-container-width: 900px;
+}
+
+/* Tipografía: cuerpo → Inter */
+body,
+.ast-separate-container .ast-article-post,
+.entry-content {
+  font-family: \'Inter\', system-ui, sans-serif;
+}
+
+/* Tipografía: titulares → Manrope SemiBold */
+h1, h2, h3, h4, h5, h6,
+.site-title,
+.ast-header-break-point .main-navigation {
+  font-family: \'Manrope\', system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* Color de enlaces */
+a,
+.ast-builder-grid-row a {
+  color: #004ac6;
+}
+a:hover {
+  color: #003da8;
+}
+';
 }
 
 /**
