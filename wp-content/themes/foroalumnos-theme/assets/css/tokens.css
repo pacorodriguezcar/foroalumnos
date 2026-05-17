@@ -199,7 +199,7 @@
 
   /* ─── LAYOUT ─────────────────────────────────────────────────── */
 
-  --layout-container-max:      1200px;
+  --layout-container-max:      1600px;
   --layout-container-padding:  1.5rem;   /* 24px */
 
   /* Grid (de Figma: columnas en gap 16px) */

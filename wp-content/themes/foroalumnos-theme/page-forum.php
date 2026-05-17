@@ -129,6 +129,10 @@ $forum_base_url = $forum_page_id ? get_permalink( $forum_page_id ) : home_url( '
                     </div>
                 </div>
 
+                <?php if ( is_active_sidebar( 'foroalumnos-forum-sidebar' ) ) : ?>
+                    <?php dynamic_sidebar( 'foroalumnos-forum-sidebar' ); ?>
+                <?php endif; ?>
+
             </aside>
         </div>
     </section>

@@ -3,6 +3,19 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'FOROALUMNOS_VERSION', '1.0.0' );
 
+add_action( 'widgets_init', 'foroalumnos_register_sidebars' );
+function foroalumnos_register_sidebars(): void {
+	register_sidebar( [
+		'name'          => __( 'Sidebar del Foro', 'foroalumnos' ),
+		'id'            => 'foroalumnos-forum-sidebar',
+		'description'   => __( 'Widgets que aparecen en la columna derecha de la página del foro.', 'foroalumnos' ),
+		'before_widget' => '<div class="foro-sidebar-card" id="%1$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="foro-sidebar-card__title">',
+		'after_title'   => '</h3>',
+	] );
+}
+
 // Preconnect a Google Fonts para carga anticipada
 add_action( 'wp_head', 'foroalumnos_preconnect_fonts', 1 );
 function foroalumnos_preconnect_fonts(): void {

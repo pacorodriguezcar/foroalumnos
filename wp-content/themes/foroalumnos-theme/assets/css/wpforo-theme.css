@@ -277,8 +277,31 @@
 
 /* ── LAYOUT DEL FORO (forum content + sidebar) ───────────────────────── */
 
-.foro-forum-content {
+/* Anclar cada hijo del grid a su columna y evitar desbordamiento */
+.foro-main-layout > .foro-forum-content {
+  grid-column: 1;
   min-width: 0;
+  overflow: hidden;
+}
+
+.foro-main-layout > .foro-sidebar {
+  grid-column: 2;
+  min-width: 0;
+}
+
+/* Impedir que Elementor y wpForo rompan fuera de su columna */
+.foro-forum-content .elementor,
+.foro-forum-content .elementor-widget-container,
+.foro-forum-content .e-con {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+#wpforo-wrap,
+.wpforo-main,
+.wpforo-content {
+  max-width: 100% !important;
+  box-sizing: border-box;
 }
 
 /* ── TOPIC CARDS DE WPFORO (vista dentro de un subforo) ──────────────── */
