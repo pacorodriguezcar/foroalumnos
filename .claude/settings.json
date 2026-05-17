@@ -13,7 +13,14 @@
       "Bash(curl -s https://foroalumnos.ddev.site/)",
       "Bash(git -C /home/paco/proyectos/foroalumnos diff .claude/settings.json)",
       "Bash(git -C /home/paco/proyectos/foroalumnos add wp-content/themes/foroalumnos-theme/functions.php wp-content/themes/foroalumnos-theme/front-page.php .claude/settings.json)",
-      "Bash(git -C /home/paco/proyectos/foroalumnos commit -m ' *)"
+      "Bash(git -C /home/paco/proyectos/foroalumnos commit -m ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(git -C /home/paco/proyectos/foroalumnos add wp-content/themes/foroalumnos-theme/functions.php wp-content/themes/foroalumnos-theme/assets/css/main.css)",
+      "Bash(python3 -c \"import sys,json; d=sys.stdin.read\\(\\); start=d.find\\('{'\\); print\\(json.dumps\\(json.loads\\(d[start:]\\), indent=2\\)[:3000]\\)\")",
+      "Bash(curl -s https://foroalumnos.ddev.site/community/)",
+      "Bash(sed -n '75,105p' /home/paco/proyectos/foroalumnos/wp-content/plugins/wpforo/wpforo.php)",
+      "Bash(sed -n '420,470p' /home/paco/proyectos/foroalumnos/wp-content/plugins/wpforo/wpforo.php)",
+      "Bash(curl -s -L --insecure https://foroalumnos.ddev.site/community/)"
     ]
   }
 }

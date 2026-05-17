@@ -46,6 +46,16 @@ function foroalumnos_enqueue_assets() {
 		[ 'foroalumnos-tokens' ],
 		FOROALUMNOS_VERSION
 	);
+
+	// Overrides de wpForo (solo en páginas del foro)
+	if ( function_exists( 'is_wpforo_url' ) && ( is_wpforo_url() || is_page( get_option( 'wpforo_pageid', 0 ) ) ) ) {
+		wp_enqueue_style(
+			'foroalumnos-wpforo',
+			get_stylesheet_directory_uri() . '/assets/css/wpforo-theme.css',
+			[ 'foroalumnos-main' ],
+			FOROALUMNOS_VERSION
+		);
+	}
 }
 
 /**
