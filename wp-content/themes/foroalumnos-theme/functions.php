@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-define( 'FOROALUMNOS_VERSION', '1.0.3' );
+define( 'FOROALUMNOS_VERSION', '1.0.5' );
 
 add_action( 'widgets_init', 'foroalumnos_register_sidebars' );
 function foroalumnos_register_sidebars(): void {
@@ -89,10 +89,10 @@ function foroalumnos_astra_overrides(): string {
   --ast-global-color-7: #c3c6d7;
   --ast-global-color-8: #191c1e;
 
-  /* Ancho de contenedor → 1200 px */
-  --ast-container-width:       1200px;
-  --ast-normal-container-width: 1200px;
-  --ast-content-width-size:    1200px;
+  /* Ancho de contenedor → 1604 px (sincronizado con astra-settings[site-content-width]) */
+  --ast-container-width:        1604px;
+  --ast-normal-container-width: 1604px;
+  --ast-content-width-size:     1604px;
   --ast-narrow-container-width: 900px;
 }
 

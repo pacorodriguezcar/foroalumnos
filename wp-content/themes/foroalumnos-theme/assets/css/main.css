@@ -89,6 +89,14 @@ h3, .foro-headline-sm {
 }
 
 /*
+ * Astra elimina el max-width en páginas con page builder (ast-page-builder-template).
+ * Lo restauramos al valor configurado (1604 px) para no ocupar el 100% del viewport.
+ */
+.ast-page-builder-template .site-content > .ast-container {
+  max-width: var(--ast-normal-container-width, 1604px) !important;
+}
+
+/*
  * En la página del foro el ast-container tiene su propio padding que recorta
  * el ancho disponible. Lo anulamos aquí para que .foro-page-forum ocupe
  * todo el ancho del contenedor (hasta el max-width de Astra, 1604 px).
