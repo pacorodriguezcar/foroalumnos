@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-define( 'FOROALUMNOS_VERSION', '1.0.0' );
+define( 'FOROALUMNOS_VERSION', '1.0.3' );
 
 add_action( 'widgets_init', 'foroalumnos_register_sidebars' );
 function foroalumnos_register_sidebars(): void {

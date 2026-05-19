@@ -88,6 +88,25 @@ h3, .foro-headline-sm {
   padding-inline: var(--layout-container-padding);
 }
 
+/*
+ * En la página del foro el ast-container tiene su propio padding que recorta
+ * el ancho disponible. Lo anulamos aquí para que .foro-page-forum ocupe
+ * todo el ancho del contenedor (hasta el max-width de Astra, 1604 px).
+ * Cada .foro-container gestiona su propio padding-inline.
+ */
+.page-template-page-forum-php .site-content > .ast-container {
+  padding-left:   0 !important;
+  padding-right:  0 !important;
+  padding-inline: 0 !important;
+}
+
+.foro-page-forum {
+  width: 100%;
+  max-width: var(--layout-container-max);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
 
 /* ─── NAVBAR ─────────────────────────────────────────────────────── */
 
